@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+    <title>Portfolio</title>
+{% endblock %}
+
+{% block content %}
+
+    <h1>Projects</h1>
+    <div class="row">
+        {% for project in projects %}
+
+            <div class="col-md-4">
+                <div class="card md-2">
+                    <img src="{% static project.pimage %}" alt="" class="card-img-top">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ project.ptitle }}</h5>
+                        <p class="card-text">{{ project.pdescription }}</p>
+                        <a href="{% url 'project_detail' project.pk %}" class="btn btn-primary">
+                            Read more...
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+        {% endfor %}
+    </div>
+
+{% endblock %}
