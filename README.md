@@ -1,1 +1,1 @@
-"portfolio app using mysql db, models" 
+"portfolio app using mysql db, models and blog" 
